@@ -13,176 +13,11 @@
 
 <style>
 
-/* =====================================================
-   CLASSIC VERSION (original design, unchanged)
-   ===================================================== */
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family: 'Segoe UI', sans-serif;
-}
-
-body{
-background:#fff7ed;
-color:#3e2723;
-}
-
-/* HEADER */
-
-header{
-background:linear-gradient(135deg,#ff5722,#ff7043);
-color:white;
-text-align:center;
-padding:35px 15px;
-border-bottom-left-radius:25px;
-border-bottom-right-radius:25px;
-box-shadow:0 5px 20px rgba(0,0,0,0.15);
-}
-
-header h1{
-font-size:1.8rem;
-margin-bottom:5px;
-}
-
-header p{
-font-size:0.9rem;
-opacity:0.9;
-}
-
-/* MAIN */
-
-.container{
-padding:18px;
-}
-
-/* CARDS */
-
-.card{
-background:white;
-padding:18px;
-border-radius:18px;
-margin-bottom:18px;
-box-shadow:0 5px 15px rgba(0,0,0,0.08);
-}
-
-.card h2{
-color:#e64a19;
-font-size:1.2rem;
-margin-bottom:10px;
-}
-
-/* EVENT DETAILS */
-
-.detail{
-display:flex;
-justify-content:space-between;
-margin-bottom:8px;
-font-size:0.95rem;
-}
-
-/* LIST */
-
-ul{
-padding-left:18px;
-line-height:1.8;
-font-size:0.95rem;
-}
-
-/* STALLS */
-
-.stalls{
-display:flex;
-flex-direction:column;
-gap:15px;
-margin-top:10px;
-}
-
-.stall{
-display:flex;
-align-items:center;
-background:#fff3e0;
-border-radius:15px;
-overflow:hidden;
-text-decoration:none;
-color:black;
-box-shadow:0 4px 10px rgba(0,0,0,0.08);
-transition:0.25s;
-}
-
-.stall:hover{
-transform:scale(1.03);
-}
-
-.stall img{
-width:90px;
-height:90px;
-object-fit:cover;
-}
-
-.stall-name{
-padding:15px;
-font-weight:bold;
-font-size:0.95rem;
-}
-
-/* FOOTER */
-
-footer{
-text-align:center;
-padding:18px;
-font-size:0.85rem;
-background:#ff7043;
-color:white;
-margin-top:25px;
-}
-
-
-/* =====================================================
-   VERSION SWITCH BUTTON
-   ===================================================== */
-
-#classic{
-padding-bottom:76px;
-}
-
-.switch-btn{
-position:fixed;
-right:16px;
-bottom:calc(16px + env(safe-area-inset-bottom));
-z-index:1000;
-border:2px solid #F6B21B;
-cursor:pointer;
-padding:13px 20px;
-border-radius:999px;
-font-family:'Figtree','Segoe UI',sans-serif;
-font-weight:800;
-font-size:.95rem;
-color:#F6B21B;
-background:#1B1F4B;
-box-shadow:0 10px 24px rgba(27,31,75,.35);
-transition:transform .2s, box-shadow .2s;
-}
-
-.switch-btn:hover{
-transform:translateY(-2px);
-box-shadow:0 14px 28px rgba(27,31,75,.45);
-}
-
-.switch-btn:focus-visible{
-outline:3px solid #fff;
-outline-offset:3px;
-}
-
-
-/* =====================================================
-   UPGRADED VERSION
-   ===================================================== */
+*{margin:0;padding:0;box-sizing:border-box}
 
 html{scroll-behavior:smooth}
 
-body.is-upgraded{background:#FFFDF8}
+body{background:#FFFDF8}
 
 #upgraded{
 --indigo:#1B1F4B;
@@ -512,7 +347,7 @@ background:var(--indigo);
 
 .nx-foot{
 margin-top:64px;
-padding:44px 18px 100px;
+padding:44px 18px 48px;
 background:var(--indigo);
 color:#fff;
 text-align:center;
@@ -584,7 +419,7 @@ body.nx-lock{overflow:hidden}
 @media (prefers-reduced-motion:reduce){
 html{scroll-behavior:auto}
 .nx-pen{animation:none}
-.nx-stall,.nx-btn,.switch-btn{transition:none}
+.nx-stall,.nx-btn{transition:none}
 }
 
 </style>
@@ -592,175 +427,7 @@ html{scroll-behavior:auto}
 
 <body>
 
-<button class="switch-btn" id="switchBtn" type="button" aria-pressed="false">✨ Upgraded Version</button>
-
-
-<!-- =====================================================
-     CLASSIC VERSION (original content)
-     ===================================================== -->
-<div id="classic">
-
-<header>
-<h1>🍔 Vijaya Food Fest 2026 🍟</h1>
-<p>Principal, Staff & Students of Vijaya College</p>
-</header>
-
-<div class="container">
-
-<div class="card">
-
-<h2>📅 Event Details</h2>
-
-<div class="detail">
-<span>Date</span>
-<span>13 April 2026</span>
-</div>
-
-<div class="detail">
-<span>Time</span>
-<span>10 AM – 3 PM</span>
-</div>
-
-<div class="detail">
-<span>Venue</span>
-<span>PU Block, Vijaya College</span>
-</div>
-
-</div>
-
-
-<div class="card">
-
-<h2>🎉 What to Expect</h2>
-
-<ul>
-<li>Free for ALL</li>
-<li>Exciting food stalls</li>
-<li>Traditional & modern snacks</li>
-<li>Carnival games</li>
-<li>Handmade items</li>
-<li>Festive campus vibe</li>
-</ul>
-
-</div>
-
-
-<div class="card">
-
-<h2>🍽 View Stalls</h2>
-
-<div class="stalls">
-
-<a class="stall" href="https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/magic.jpeg?raw=true" target="_blank">
-<img src="https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/magic.jpeg?raw=true">
-<div class="stall-name">MAGIC CHILL&CHEW</div>
-</a>
-
-<a class="stall" href="https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/bhat&bhat2.jpeg?raw=true" target="_blank">
-<img src="https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/bhat&bhat2.jpeg?raw=true">
-<div class="stall-name">BHAT & BHAT CHATS</div>
-</a>
-
-<a class="stall" href="https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/hungrybites.jpeg?raw=true" target="_blank">
-<img src="https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/hungrybites.jpeg?raw=true">
-<div class="stall-name">HUNGRY BITES</div>
-</a>
-
-<a class="stall" href="https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/nodietzone.jpeg?raw=true" target="_blank">
-<img src="https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/nodietzone.jpeg?raw=true">
-<div class="stall-name">NO-DIET ZONE</div>
-</a>
-
-<a class="stall" href="https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/coolrasa.jpeg?raw=true" target="_blank">
-<img src="https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/coolrasa.jpeg?raw=true">
-<div class="stall-name">COOL RASA</div>
-</a>
-
-<a class="stall" href="https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/foodcourt.jpeg?raw=true" target="_blank">
-<img src="https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/foodcourt.jpeg?raw=true">
-<div class="stall-name">FOOD COURT</div>
-</a>
-
-<a class="stall" href="https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/scoopmeetssnak.jpeg?raw=true" target="_blank">
-<img src="https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/scoopmeetssnak.jpeg?raw=true">
-<div class="stall-name">SCOOP MEETS SNACKS</div>
-</a>
-
-<a class="stall" href="https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/apt.jpeg?raw=true" target="_blank">
-<img src="https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/apt.jpeg?raw=true">
-<div class="stall-name">APT'S KITCHEN</div>
-</a>
-
-<a class="stall" href="https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/mglorelimesoda.jpeg?raw=true" target="_blank">
-<img src="https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/mglorelimesoda.jpeg?raw=true">
-<div class="stall-name">M'LORE LIME SODA</div>
-</a>
-
-  <a class="stall" href="https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/refreshhub.jpeg?raw=true" target="_blank">
-<img src="https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/refreshhub.jpeg?raw=true">
-<div class="stall-name">REFRESH HUB</div>
-</a>
-
-  <a class="stall" href="https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/svaadsutra.jpeg?raw=true" target="_blank">
-<img src="https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/svaadsutra.jpeg?raw=true">
-<div class="stall-name">SVAAD SUTRA</div>
-</a>
-
-  <a class="stall" href="https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/tastymonk.jpeg?raw=true" target="_blank">
-<img src="https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/tastymonk.jpeg?raw=true">
-<div class="stall-name">TASTY MONK</div>
-</a>
-
-  <a class="stall" href="https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/chillzone.jpeg?raw=true" target="_blank">
-<img src="https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/chillzone.jpeg?raw=true">
-<div class="stall-name">CHILL ZONE</div>
-</a>
-
-   <a class="stall" href="https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/gamestall.jpeg?raw=true" target="_blank">
-<img src="https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/gamestall.jpeg?raw=true">
-<div class="stall-name">GAMES STALL</div>
-</a>
-
-         <a class="stall" href="https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/endgame2.jpeg?raw=true" target="_blank">
-<img src="https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/endgame2.jpeg?raw=true">
-<div class="stall-name">END GAME</div>
-</a>
-
-            <a class="stall" href="https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/foodcraze.jpeg?raw=true" target="_blank">
-<img src="https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/foodcraze.jpeg?raw=true">
-<div class="stall-name">FOOD CRAZE</div>
-</a>
-
-              <a class="stall" href="https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/lala.jpeg?raw=true" target="_blank">
-<img src="https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/lala.jpeg?raw=true">
-<div class="stall-name">LALA SNACK ITEMS</div>
-</a>
-
-</div>
-
-</div>
-
-
-<div class="card">
-
-<h2>📝 Registration</h2>
-<p>No registration required — just walk in and enjoy!</p>
-
-</div>
-
-</div>
-
-<footer>
-Contact: Mrs. Surekha | +91 95354 38967
-</footer>
-
-</div>
-
-
-<!-- =====================================================
-     UPGRADED VERSION
-     ===================================================== -->
-<div id="upgraded" hidden>
+<div id="upgraded">
 
   <section class="nx-hero">
     <div class="nx-bunting" id="nxBunting" aria-label="Stall posters. Select one to view it."></div>
@@ -841,7 +508,7 @@ Contact: Mrs. Surekha | +91 95354 38967
 
   var BASE = 'https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/';
 
-  /* name, image file (file names are the same as the classic version) */
+  /* name, image file */
   var STALLS = [
     ['MAGIC CHILL&CHEW', 'magic.jpeg'],
     ['BHAT & BHAT CHATS', 'bhat&bhat2.jpeg'],
@@ -867,7 +534,6 @@ Contact: Mrs. Surekha | +91 95354 38967
   function $(id) { return document.getElementById(id); }
   function url(s) { return BASE + s[1] + '?raw=true'; }
 
-  var classic = $('classic'), upgraded = $('upgraded'), switchBtn = $('switchBtn');
   var grid = $('nxGrid'), bunting = $('nxBunting'), search = $('nxSearch');
   var count = $('nxCount'), empty = $('nxEmpty');
   var lb = $('nxLb'), lbImg = $('nxLbImg'), lbCap = $('nxLbCap'), lbOpen = $('nxLbOpen');
@@ -1010,28 +676,7 @@ Contact: Mrs. Surekha | +91 95354 38967
     startX = null;
   });
 
-  /* ---------- version switch ---------- */
-
-  function setView(mode, scroll) {
-    var up = mode === 'upgraded';
-    if (up) build();
-    classic.hidden = up;
-    upgraded.hidden = !up;
-    document.body.classList.toggle('is-upgraded', up);
-    switchBtn.textContent = up ? '← Classic Version' : '✨ Upgraded Version';
-    switchBtn.setAttribute('aria-pressed', up ? 'true' : 'false');
-    if (scroll) window.scrollTo(0, 0);
-    try {
-      history.replaceState(null, '', up ? '#upgraded' : location.pathname + location.search);
-    } catch (e) {}
-  }
-
-  switchBtn.addEventListener('click', function () {
-    setView(upgraded.hidden ? 'upgraded' : 'classic', true);
-  });
-
-  /* classic is the default; a link ending in #upgraded opens the new design */
-  if (/^#(upgraded|nx-)/.test(location.hash)) setView('upgraded', false);
+  build();
 
 })();
 </script>
