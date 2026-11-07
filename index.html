@@ -3,10 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1B1F4B">
 
 <title>Vijaya Food Fest 2026</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Figtree:wght@400;600;800&display=swap" rel="stylesheet">
+
 <style>
+
+/* =====================================================
+   CLASSIC VERSION (original design, unchanged)
+   ===================================================== */
 
 *{
 margin:0;
@@ -129,10 +138,467 @@ color:white;
 margin-top:25px;
 }
 
+
+/* =====================================================
+   VERSION SWITCH BUTTON
+   ===================================================== */
+
+#classic{
+padding-bottom:76px;
+}
+
+.switch-btn{
+position:fixed;
+right:16px;
+bottom:calc(16px + env(safe-area-inset-bottom));
+z-index:1000;
+border:2px solid #F6B21B;
+cursor:pointer;
+padding:13px 20px;
+border-radius:999px;
+font-family:'Figtree','Segoe UI',sans-serif;
+font-weight:800;
+font-size:.95rem;
+color:#F6B21B;
+background:#1B1F4B;
+box-shadow:0 10px 24px rgba(27,31,75,.35);
+transition:transform .2s, box-shadow .2s;
+}
+
+.switch-btn:hover{
+transform:translateY(-2px);
+box-shadow:0 14px 28px rgba(27,31,75,.45);
+}
+
+.switch-btn:focus-visible{
+outline:3px solid #fff;
+outline-offset:3px;
+}
+
+
+/* =====================================================
+   UPGRADED VERSION
+   ===================================================== */
+
+html{scroll-behavior:smooth}
+
+body.is-upgraded{background:#FFFDF8}
+
+#upgraded{
+--indigo:#1B1F4B;
+--turmeric:#F6B21B;
+--chili:#D7261E;
+--leaf:#1F7A45;
+--paper:#FFFDF8;
+--muted:#5B5F80;
+--display:'Bungee',Impact,'Arial Black',sans-serif;
+font-family:'Figtree','Segoe UI',system-ui,sans-serif;
+color:var(--indigo);
+line-height:1.5;
+}
+
+#upgraded *{font-family:inherit}
+
+#upgraded .nx-display{font-family:var(--display);font-weight:400}
+
+.nx-wrap{max-width:1040px;margin:0 auto;padding:0 18px}
+
+.nx-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- hero ---------- */
+
+.nx-hero{
+background:var(--indigo);
+color:var(--turmeric);
+padding:10px 0 96px;
+border-radius:0 0 36px 36px;
+}
+
+.nx-bunting{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+max-width:1100px;
+margin:0 auto;
+padding:0 8px;
+}
+
+.nx-slot{
+position:relative;
+flex:none;
+width:92px;
+height:134px;
+padding:0 3px;
+}
+
+.nx-slot::before{
+content:"";
+position:absolute;
+left:0;right:0;top:0;
+height:4px;
+background:var(--turmeric);
+opacity:.9;
+}
+
+.nx-pen{
+position:relative;
+display:block;
+width:100%;
+height:128px;
+margin-top:2px;
+padding:0;
+border:0;
+background:none;
+cursor:pointer;
+transform-origin:50% 0;
+transform:rotate(var(--r,-3deg));
+transition:transform .25s;
+animation:nxDrop .8s cubic-bezier(.3,1.5,.5,1) backwards;
+animation-delay:calc(var(--i) * 55ms);
+}
+
+.nx-slot:nth-child(even) .nx-pen{--r:3deg}
+
+.nx-pen:hover,
+.nx-pen:focus-visible{transform:rotate(0) scale(1.08)}
+
+.nx-pen:focus-visible{outline:3px solid #fff;outline-offset:4px}
+
+.nx-tri{
+position:absolute;
+inset:4px 0 0 0;
+clip-path:polygon(0 0,100% 0,50% 100%);
+background:var(--c);
+}
+
+.nx-tri img{
+position:absolute;
+left:7px;
+top:7px;
+width:calc(100% - 14px);
+height:calc(100% - 7px);
+object-fit:cover;
+clip-path:polygon(0 0,100% 0,50% 100%);
+opacity:0;
+transition:opacity .4s;
+}
+
+.nx-pen.ready img{opacity:1}
+
+@keyframes nxDrop{
+from{transform:translateY(-150%) rotate(0)}
+}
+
+@media (max-width:760px){
+.nx-bunting{
+flex-wrap:nowrap;
+justify-content:flex-start;
+overflow-x:auto;
+padding-left:12px;
+scrollbar-width:none;
+-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);
+mask-image:linear-gradient(90deg,#000 88%,transparent);
+}
+.nx-bunting::-webkit-scrollbar{display:none}
+.nx-slot{width:80px;height:118px}
+.nx-pen{height:112px}
+}
+
+.nx-hero-copy{padding-top:34px}
+
+.nx-title{
+font-size:clamp(2.6rem,10vw,5.6rem);
+line-height:1;
+letter-spacing:.01em;
+}
+
+.nx-title span{display:block}
+
+.nx-host{
+margin-top:18px;
+max-width:34ch;
+color:#fff;
+font-size:1.05rem;
+}
+
+.nx-btn{
+display:inline-block;
+margin-top:26px;
+padding:14px 28px;
+border-radius:999px;
+background:var(--turmeric);
+color:var(--indigo);
+font-weight:800;
+text-decoration:none;
+transition:transform .2s, background .2s;
+}
+
+.nx-btn:hover{transform:translateY(-2px);background:#fff}
+.nx-btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
+
+/* ---------- ticket ---------- */
+
+.nx-ticket-wrap{margin-top:-58px;position:relative;z-index:2}
+
+.nx-ticket{
+display:grid;
+grid-template-columns:1fr minmax(240px,34%);
+background:var(--turmeric);
+color:var(--indigo);
+border-radius:22px;
+overflow:hidden;
+box-shadow:0 14px 0 -6px rgba(27,31,75,.18);
+}
+
+.nx-info{
+display:grid;
+grid-template-columns:repeat(3,auto);
+gap:18px 28px;
+justify-content:start;
+align-content:center;
+padding:26px 28px;
+}
+
+.nx-info dt{font-size:.85rem;font-weight:600;opacity:.8}
+.nx-info dd{font-size:1.15rem;font-weight:800;line-height:1.25}
+
+.nx-stub{
+display:flex;
+flex-direction:column;
+justify-content:center;
+gap:8px;
+padding:24px 26px;
+background:var(--chili);
+color:#fff;
+border-left:4px dashed var(--turmeric);
+}
+
+.nx-stub strong{font-size:1.5rem;line-height:1.1}
+.nx-stub span{font-size:.95rem}
+
+@media (max-width:760px){
+.nx-ticket{grid-template-columns:1fr}
+.nx-info{grid-template-columns:1fr 1fr;padding:22px}
+.nx-info div:last-child{grid-column:1 / -1}
+.nx-stub{border-left:0;border-top:4px dashed var(--turmeric)}
+}
+
+/* ---------- sections ---------- */
+
+.nx-section{padding-top:52px}
+
+.nx-h2{font-size:clamp(1.5rem,5vw,2.2rem);line-height:1.1}
+
+/* highlights */
+
+.nx-chips{
+display:flex;
+flex-wrap:wrap;
+gap:12px;
+margin:18px 0 0;
+padding:0;
+list-style:none;
+line-height:1.3;
+font-size:1rem;
+}
+
+.nx-chip{
+padding:11px 20px;
+border:3px solid var(--indigo);
+border-radius:999px;
+font-weight:800;
+background:#fff;
+transform:rotate(var(--r,-1.5deg));
+}
+
+.nx-chip:nth-child(1){background:var(--turmeric)}
+.nx-chip:nth-child(2){background:var(--leaf);color:#fff;--r:1.5deg}
+.nx-chip:nth-child(3){--r:-1deg}
+.nx-chip:nth-child(4){background:var(--chili);color:#fff;--r:2deg}
+.nx-chip:nth-child(5){background:var(--turmeric);--r:-2deg}
+
+/* stalls */
+
+.nx-bar{
+display:flex;
+flex-wrap:wrap;
+align-items:center;
+justify-content:space-between;
+gap:12px 20px;
+margin:18px 0 22px;
+}
+
+.nx-search{position:relative;flex:1 1 260px;max-width:440px}
+
+.nx-search input{
+width:100%;
+padding:13px 18px;
+border:3px solid var(--indigo);
+border-radius:999px;
+background:#fff;
+color:var(--indigo);
+font-size:1rem;
+outline:none;
+}
+
+.nx-search input::placeholder{color:var(--muted)}
+.nx-search input:focus{box-shadow:0 0 0 4px rgba(246,178,27,.55)}
+
+.nx-count{font-weight:800;color:var(--muted)}
+
+.nx-grid{
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
+gap:22px 18px;
+}
+
+@media (min-width:700px){
+.nx-grid{grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:26px 22px}
+}
+
+.nx-stall{
+display:flex;
+flex-direction:column;
+border:3px solid var(--indigo);
+border-radius:16px;
+overflow:hidden;
+padding:0;
+background:#fff;
+cursor:pointer;
+text-align:left;
+box-shadow:5px 5px 0 var(--turmeric);
+transition:transform .2s, box-shadow .2s;
+}
+
+.nx-stall[hidden]{display:none}
+
+.nx-stall:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--turmeric)}
+.nx-stall:focus-visible{outline:3px solid var(--chili);outline-offset:4px}
+
+.nx-ph{position:relative;aspect-ratio:1 / 1;background:#ECE9FA}
+
+.nx-ph img{
+position:absolute;
+inset:0;
+width:100%;
+height:100%;
+object-fit:cover;
+opacity:0;
+transition:opacity .4s;
+}
+
+.nx-stall.ready .nx-ph img{opacity:1}
+.nx-stall.noimg .nx-ph::before{content:"\1F37D";position:absolute;inset:0;display:grid;place-items:center;font-size:2.4rem}
+
+.nx-plate{
+display:flex;
+align-items:center;
+min-height:3.4em;
+padding:9px 12px;
+font-weight:800;
+font-size:.9rem;
+line-height:1.2;
+color:#fff;
+background:var(--indigo);
+}
+
+.nx-stall:nth-child(3n+1) .nx-plate{background:var(--chili)}
+.nx-stall:nth-child(3n+2) .nx-plate{background:var(--leaf)}
+
+.nx-empty{padding:28px 0;font-weight:600;color:var(--muted)}
+.nx-empty[hidden]{display:none}
+
+/* footer */
+
+.nx-foot{
+margin-top:64px;
+padding:44px 18px 100px;
+background:var(--indigo);
+color:#fff;
+text-align:center;
+border-radius:36px 36px 0 0;
+}
+
+.nx-foot p{margin-bottom:6px}
+.nx-foot .nx-btn{margin-top:14px}
+
+/* ---------- lightbox ---------- */
+
+.nx-lb{
+position:fixed;
+inset:0;
+z-index:2000;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:16px;
+background:rgba(14,16,45,.92);
+}
+
+.nx-lb[hidden]{display:none}
+
+.nx-lb-box{
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:12px;
+width:100%;
+max-width:min(92vw,820px);
+}
+
+.nx-lb-box img{
+max-width:100%;
+max-height:72vh;
+object-fit:contain;
+border-radius:16px;
+background:#fff;
+}
+
+.nx-lb-cap{color:#fff;font-weight:800;text-align:center}
+.nx-lb-open{color:var(--turmeric);font-weight:600}
+
+.nx-lb-btn{
+position:fixed;
+width:48px;
+height:48px;
+border:0;
+border-radius:50%;
+background:var(--turmeric);
+color:var(--indigo);
+font-size:1.4rem;
+font-weight:800;
+cursor:pointer;
+display:grid;
+place-items:center;
+}
+
+.nx-lb-btn[hidden]{display:none}
+.nx-lb-btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
+
+.nx-lb-close{top:14px;right:14px}
+.nx-lb-prev{left:10px;top:50%;transform:translateY(-50%)}
+.nx-lb-next{right:10px;top:50%;transform:translateY(-50%)}
+
+body.nx-lock{overflow:hidden}
+
+@media (prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+.nx-pen{animation:none}
+.nx-stall,.nx-btn,.switch-btn{transition:none}
+}
+
 </style>
 </head>
 
 <body>
+
+<button class="switch-btn" id="switchBtn" type="button" aria-pressed="false">✨ Upgraded Version</button>
+
+
+<!-- =====================================================
+     CLASSIC VERSION (original content)
+     ===================================================== -->
+<div id="classic">
 
 <header>
 <h1>🍔 Vijaya Food Fest 2026 🍟</h1>
@@ -234,7 +700,7 @@ margin-top:25px;
 <img src="https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/refreshhub.jpeg?raw=true">
 <div class="stall-name">REFRESH HUB</div>
 </a>
-  
+
   <a class="stall" href="https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/svaadsutra.jpeg?raw=true" target="_blank">
 <img src="https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/svaadsutra.jpeg?raw=true">
 <div class="stall-name">SVAAD SUTRA</div>
@@ -247,24 +713,29 @@ margin-top:25px;
 
   <a class="stall" href="https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/chillzone.jpeg?raw=true" target="_blank">
 <img src="https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/chillzone.jpeg?raw=true">
-<div class="stall-name">CHILL ZONE</div>    
+<div class="stall-name">CHILL ZONE</div>
 </a>
 
    <a class="stall" href="https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/gamestall.jpeg?raw=true" target="_blank">
 <img src="https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/gamestall.jpeg?raw=true">
-<div class="stall-name">GAMES STALL</div>      
+<div class="stall-name">GAMES STALL</div>
+</a>
 
          <a class="stall" href="https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/endgame2.jpeg?raw=true" target="_blank">
 <img src="https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/endgame2.jpeg?raw=true">
 <div class="stall-name">END GAME</div>
+</a>
 
             <a class="stall" href="https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/foodcraze.jpeg?raw=true" target="_blank">
 <img src="https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/foodcraze.jpeg?raw=true">
 <div class="stall-name">FOOD CRAZE</div>
+</a>
 
               <a class="stall" href="https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/lala.jpeg?raw=true" target="_blank">
 <img src="https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/lala.jpeg?raw=true">
 <div class="stall-name">LALA SNACK ITEMS</div>
+</a>
+
 </div>
 
 </div>
@@ -282,6 +753,288 @@ margin-top:25px;
 <footer>
 Contact: Mrs. Surekha | +91 95354 38967
 </footer>
+
+</div>
+
+
+<!-- =====================================================
+     UPGRADED VERSION
+     ===================================================== -->
+<div id="upgraded" hidden>
+
+  <section class="nx-hero">
+    <div class="nx-bunting" id="nxBunting" aria-label="Stall posters. Select one to view it."></div>
+
+    <div class="nx-wrap nx-hero-copy">
+      <h1 class="nx-title nx-display">
+        <span>Vijaya</span>
+        <span>Food Fest</span>
+        <span>2026</span>
+      </h1>
+      <p class="nx-host">Principal, Staff &amp; Students of Vijaya College</p>
+      <a class="nx-btn" href="#nx-stalls">Browse stalls</a>
+    </div>
+  </section>
+
+  <section class="nx-wrap nx-ticket-wrap" id="nx-details" aria-label="Event details">
+    <div class="nx-ticket">
+      <dl class="nx-info">
+        <div><dt>Date</dt><dd>13 April 2026</dd></div>
+        <div><dt>Time</dt><dd>10 AM – 3 PM</dd></div>
+        <div><dt>Venue</dt><dd>PU Block, Vijaya College</dd></div>
+      </dl>
+      <div class="nx-stub">
+        <strong class="nx-display">Free for ALL</strong>
+        <span>No registration required — just walk in and enjoy!</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="nx-wrap nx-section" id="nx-expect">
+    <h2 class="nx-h2 nx-display">What to expect</h2>
+    <ul class="nx-chips">
+      <li class="nx-chip">🍽 Exciting food stalls</li>
+      <li class="nx-chip">🥘 Traditional &amp; modern snacks</li>
+      <li class="nx-chip">🎡 Carnival games</li>
+      <li class="nx-chip">🧵 Handmade items</li>
+      <li class="nx-chip">🎉 Festive campus vibe</li>
+    </ul>
+  </section>
+
+  <section class="nx-wrap nx-section" id="nx-stalls">
+    <h2 class="nx-h2 nx-display">Stalls</h2>
+
+    <div class="nx-bar">
+      <div class="nx-search">
+        <label class="nx-sr" for="nxSearch">Search stalls</label>
+        <input id="nxSearch" type="search" placeholder="Search stalls" autocomplete="off">
+      </div>
+      <p class="nx-count" id="nxCount" aria-live="polite"></p>
+    </div>
+
+    <div class="nx-grid" id="nxGrid"></div>
+    <p class="nx-empty" id="nxEmpty" hidden></p>
+  </section>
+
+  <div class="nx-foot" id="nx-contact">
+    <p>Questions about the fest?</p>
+    <p><strong>Mrs. Surekha</strong> &nbsp; +91 95354 38967</p>
+    <a class="nx-btn" href="tel:+919535438967">Call Mrs. Surekha</a>
+  </div>
+
+  <div class="nx-lb" id="nxLb" role="dialog" aria-modal="true" aria-label="Stall preview" hidden>
+    <button class="nx-lb-btn nx-lb-close" id="nxLbClose" type="button" aria-label="Close preview">✕</button>
+    <button class="nx-lb-btn nx-lb-prev" id="nxLbPrev" type="button" aria-label="Previous stall">‹</button>
+    <button class="nx-lb-btn nx-lb-next" id="nxLbNext" type="button" aria-label="Next stall">›</button>
+    <div class="nx-lb-box">
+      <img id="nxLbImg" alt="">
+      <p class="nx-lb-cap" id="nxLbCap"></p>
+      <a class="nx-lb-open" id="nxLbOpen" href="#" target="_blank" rel="noopener">Open full image</a>
+    </div>
+  </div>
+
+</div>
+
+
+<script>
+(function () {
+
+  var BASE = 'https://github.com/kishansalian07/Vijaya-Food-Fest/blob/main/';
+
+  /* name, image file (file names are the same as the classic version) */
+  var STALLS = [
+    ['MAGIC CHILL&CHEW', 'magic.jpeg'],
+    ['BHAT & BHAT CHATS', 'bhat&bhat2.jpeg'],
+    ['HUNGRY BITES', 'hungrybites.jpeg'],
+    ['NO-DIET ZONE', 'nodietzone.jpeg'],
+    ['COOL RASA', 'coolrasa.jpeg'],
+    ['FOOD COURT', 'foodcourt.jpeg'],
+    ['SCOOP MEETS SNACKS', 'scoopmeetssnak.jpeg'],
+    ["APT'S KITCHEN", 'apt.jpeg'],
+    ["M'LORE LIME SODA", 'mglorelimesoda.jpeg'],
+    ['REFRESH HUB', 'refreshhub.jpeg'],
+    ['SVAAD SUTRA', 'svaadsutra.jpeg'],
+    ['TASTY MONK', 'tastymonk.jpeg'],
+    ['CHILL ZONE', 'chillzone.jpeg'],
+    ['GAMES STALL', 'gamestall.jpeg'],
+    ['END GAME', 'endgame2.jpeg'],
+    ['FOOD CRAZE', 'foodcraze.jpeg'],
+    ['LALA SNACK ITEMS', 'lala.jpeg']
+  ];
+
+  var COLORS = ['#D7261E', '#F6B21B', '#1F7A45', '#FFFFFF'];
+
+  function $(id) { return document.getElementById(id); }
+  function url(s) { return BASE + s[1] + '?raw=true'; }
+
+  var classic = $('classic'), upgraded = $('upgraded'), switchBtn = $('switchBtn');
+  var grid = $('nxGrid'), bunting = $('nxBunting'), search = $('nxSearch');
+  var count = $('nxCount'), empty = $('nxEmpty');
+  var lb = $('nxLb'), lbImg = $('nxLbImg'), lbCap = $('nxLbCap'), lbOpen = $('nxLbOpen');
+  var lbClose = $('nxLbClose'), lbPrev = $('nxLbPrev'), lbNext = $('nxLbNext');
+
+  var built = false, tiles = [], view = [], pos = 0, opener = null;
+
+  /* ---------- build the upgraded view (once) ---------- */
+
+  function watchImage(img, el) {
+    img.addEventListener('load', function () { el.classList.add('ready'); });
+    img.addEventListener('error', function () { el.classList.add('noimg'); });
+  }
+
+  function build() {
+    if (built) return;
+    built = true;
+
+    STALLS.forEach(function (s, i) {
+      /* pennant */
+      var slot = document.createElement('div');
+      slot.className = 'nx-slot';
+      var pen = document.createElement('button');
+      pen.type = 'button';
+      pen.className = 'nx-pen';
+      pen.style.setProperty('--i', i);
+      pen.style.setProperty('--c', COLORS[i % COLORS.length]);
+      pen.setAttribute('aria-label', 'View ' + s[0]);
+      var tri = document.createElement('span');
+      tri.className = 'nx-tri';
+      var pimg = document.createElement('img');
+      pimg.alt = '';
+      pimg.loading = 'lazy';
+      watchImage(pimg, pen);
+      pimg.src = url(s);
+      tri.appendChild(pimg);
+      pen.appendChild(tri);
+      pen.addEventListener('click', function () { openLB(i, pen); });
+      slot.appendChild(pen);
+      bunting.appendChild(slot);
+
+      /* stall tile */
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'nx-stall';
+      b.setAttribute('aria-label', 'View ' + s[0]);
+      var ph = document.createElement('span');
+      ph.className = 'nx-ph';
+      var img = document.createElement('img');
+      img.alt = '';
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      watchImage(img, b);
+      img.src = url(s);
+      ph.appendChild(img);
+      var plate = document.createElement('span');
+      plate.className = 'nx-plate';
+      plate.textContent = s[0];
+      b.appendChild(ph);
+      b.appendChild(plate);
+      b.addEventListener('click', function () { openLB(i, b); });
+      grid.appendChild(b);
+      tiles.push(b);
+    });
+
+    applyFilter('');
+  }
+
+  /* ---------- search ---------- */
+
+  function applyFilter(q) {
+    var term = q.trim().toLowerCase();
+    view = [];
+    STALLS.forEach(function (s, i) {
+      var show = !term || s[0].toLowerCase().indexOf(term) !== -1;
+      tiles[i].hidden = !show;
+      if (show) view.push(i);
+    });
+    count.textContent = view.length === STALLS.length
+      ? STALLS.length + ' stalls'
+      : view.length + ' of ' + STALLS.length + ' stalls';
+    empty.hidden = view.length > 0;
+    if (!view.length) empty.textContent = 'No stall matches "' + q.trim() + '". Try a different name.';
+  }
+
+  search.addEventListener('input', function () { applyFilter(search.value); });
+
+  /* ---------- lightbox ---------- */
+
+  function showAt(p) {
+    pos = (p + view.length) % view.length;
+    var s = STALLS[view[pos]];
+    lbImg.src = url(s);
+    lbImg.alt = s[0] + ' stall poster';
+    lbCap.textContent = s[0] + ' (' + (pos + 1) + ' of ' + view.length + ')';
+    lbOpen.href = url(s);
+    lbPrev.hidden = lbNext.hidden = view.length < 2;
+  }
+
+  function openLB(idx, btn) {
+    if (view.indexOf(idx) === -1) { search.value = ''; applyFilter(''); }
+    opener = btn;
+    showAt(view.indexOf(idx));
+    lb.hidden = false;
+    document.body.classList.add('nx-lock');
+    lbClose.focus();
+  }
+
+  function closeLB() {
+    lb.hidden = true;
+    document.body.classList.remove('nx-lock');
+    lbImg.removeAttribute('src');
+    if (opener) opener.focus();
+  }
+
+  lbClose.addEventListener('click', closeLB);
+  lbPrev.addEventListener('click', function () { showAt(pos - 1); });
+  lbNext.addEventListener('click', function () { showAt(pos + 1); });
+  lb.addEventListener('click', function (e) { if (e.target === lb) closeLB(); });
+
+  document.addEventListener('keydown', function (e) {
+    if (lb.hidden) return;
+    if (e.key === 'Escape') { closeLB(); }
+    else if (e.key === 'ArrowLeft' && view.length > 1) { showAt(pos - 1); }
+    else if (e.key === 'ArrowRight' && view.length > 1) { showAt(pos + 1); }
+    else if (e.key === 'Tab') {
+      var f = [lbClose, lbPrev, lbNext, lbOpen].filter(function (x) { return !x.hidden; });
+      var first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  });
+
+  var startX = null;
+  lb.addEventListener('touchstart', function (e) { startX = e.touches[0].clientX; }, { passive: true });
+  lb.addEventListener('touchend', function (e) {
+    if (startX === null || view.length < 2) return;
+    var dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 50) showAt(pos + (dx < 0 ? 1 : -1));
+    startX = null;
+  });
+
+  /* ---------- version switch ---------- */
+
+  function setView(mode, scroll) {
+    var up = mode === 'upgraded';
+    if (up) build();
+    classic.hidden = up;
+    upgraded.hidden = !up;
+    document.body.classList.toggle('is-upgraded', up);
+    switchBtn.textContent = up ? '← Classic Version' : '✨ Upgraded Version';
+    switchBtn.setAttribute('aria-pressed', up ? 'true' : 'false');
+    if (scroll) window.scrollTo(0, 0);
+    try {
+      history.replaceState(null, '', up ? '#upgraded' : location.pathname + location.search);
+    } catch (e) {}
+  }
+
+  switchBtn.addEventListener('click', function () {
+    setView(upgraded.hidden ? 'upgraded' : 'classic', true);
+  });
+
+  /* classic is the default; a link ending in #upgraded opens the new design */
+  if (/^#(upgraded|nx-)/.test(location.hash)) setView('upgraded', false);
+
+})();
+</script>
 
 </body>
 </html>
